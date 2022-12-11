@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MEMEit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'core/bootstrap.min.css' %}">
+  
+  <link href="{% static 'core/bootstrap/three/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'core/bootstrap/four/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <style type="text/css">
+    #bg{
+    background-color: rgb(85, 142, 249);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 100%;}
+  
+  </style>
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(70, 117, 204); color: white">
+   <a class="navbar-brand" href="#"></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+   <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'index' %}" style="color: #ffffff ; font-size: 35px; font-weight: bold;">MEMEit<br><span class="sr-only">(current)</span></a> 
+      <p style=>Social Media for Memes :-)</p>
+    </li>
+  </ul>
+  </div>
+</nav>
+</head>
+<body style="background-image:url('{% static "core/images/background.jpg"%}')"></body>
+{% block body %}
+{% endblock %}
+</html>

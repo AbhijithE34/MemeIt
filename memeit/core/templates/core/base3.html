@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MEMEit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link href="{% static 'core/bootstrap/three/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'core/bootstrap/four/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+   <style type="text/css">
+    #bg{
+    background-position: center;  
+    background-attachment: fixed;
+    background-image: url('{% static "core/images/bg.jpg"%}')
+     }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(85, 142, 249);color: rgb(255, 255, 255)">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class=""nav.nav-item>
+          <a class="navbar-brand" href="{% url 'welcome' %}" style="font-size: 40px; font-weight: bold; color: rgb(255, 255, 255)">MEMEit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'welcome' %}" style= "font-size: 25px; color: rgb(255, 255, 255)">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'feed' %}" style= "font-size: 25px; color: rgb(255, 255, 255)">My Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+        </li>
+      </ul>      
+        
+      <form action="{% url 'search' %}" class="d-flex" method="GET" style="align-content: right;">
+        <input name="q" class="form-control me-2" type="search" placeholder="FInd A Friend Here" aria-label="Search">
+          <button type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </input>
+      </form>
+
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{%  url 'logout' %}" style="font-weight: bold; color: rgb(48, 26, 29)">Logout</a>
+        </li>
+      </ul>                     
+    </div>
+  </nav>
+</body>
+<body id="bg">
+{% block body %}
+{% endblock %}
+</body>
+</html>
